@@ -18,7 +18,6 @@ const TodoList = (props) => {
                   </Fragment>
                 ))}
             </List>
-        
         </Paper>
     )
 }
