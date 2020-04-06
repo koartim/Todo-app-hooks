@@ -1,11 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Typography from "@material-ui/core/Typography";
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
+import TodoList from './TodoList';
 
 const TodoApp = () => {
+
+    const localTodos = [
+        {id: 1, task: "Clean Fish", completed: false},
+        {id: 2, task: "Satiate Car", completed: false},
+        {id: 3, task: "Find Frogs", completed: false}
+    ];
+
+    const [todos, setTodos] = useState(localTodos); 
+
     return (
         <Paper style={{
             padding: 0,
@@ -20,6 +30,7 @@ const TodoApp = () => {
                     <Typography color='inherit'>Todos With Hooks</Typography>
                 </ToolBar>
             </AppBar>
+            <TodoList todos={todos}/>
         </Paper>
     )
 }
